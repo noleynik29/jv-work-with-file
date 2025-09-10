@@ -43,5 +43,4 @@ public class WorkWithFile {
             throw new RuntimeException("Error writing to file" + e);
         }
     }
-
 }
