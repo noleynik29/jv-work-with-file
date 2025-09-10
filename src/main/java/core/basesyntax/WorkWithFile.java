@@ -38,7 +38,14 @@ public class WorkWithFile {
                 }
 
                 String operation = parts[0].trim();
-                int amount = Integer.parseInt(parts[1].trim());
+                int amount;
+
+                try {
+                    amount = Integer.parseInt(parts[1].trim());
+                } catch (NumberFormatException e) {
+                    throw new RuntimeException(
+                            "Invalid number in file " + fileName + " on line: \"" + line + "\"", e);
+                }
 
                 if (SUPPLY.equals(operation)) {
                     supplySum += amount;
