@@ -3,8 +3,8 @@ package core.basesyntax;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class WorkWithFile {
     public static void getStatistic(String fromFileName, String toFileName) {
@@ -15,7 +15,9 @@ public class WorkWithFile {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length != 2) continue;
+                if (parts.length != 2) {
+                    continue;
+                }
 
                 String operation = parts[0].trim();
                 int amount = Integer.parseInt(parts[1].trim());
